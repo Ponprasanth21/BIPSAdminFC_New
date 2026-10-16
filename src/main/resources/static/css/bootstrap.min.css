@@ -7911,17 +7911,15 @@ none
 }
 
 .card-header {
-	background: linear-gradient(to bottom, #17a2b885 5%, hsl(192, 75%, 29%)
-		50%);
-	background-color: #377486;
+	background: #112469;
+	background-color: #112469;
 	font-size: 14px;
 	font-family: sans-serif;
-	font-style: times new roman;
 	color: white;
 	padding: 1rem 1.3rem;
 	margin-bottom: 0;
 	height: 50px;
-	border-bottom: 1px solid #17a2b852;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .card-header:first-child {
@@ -7934,10 +7932,9 @@ none
 
 .card-footer {
 	padding: 7px;
-	background: linear-gradient(to bottom, #17a2b885 5%, hsla(192, 58%, 30%, 0.71)
-		50%);
-	border-top: 1px solid #36404a;
-	background-color: #377486;
+	background: #112469;
+	background-color: #112469;
+	border-top: 1px solid rgba(255, 255, 255, 0.15);
 	height: 43px;
 }
 
