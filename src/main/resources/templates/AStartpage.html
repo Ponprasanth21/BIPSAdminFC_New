@@ -1,250 +1,498 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="utf-8">
+	<meta charset="utf-8">
 	<meta name="keywords" content="table">
 	<meta name="description" content="banking process">
 	<meta name="author" content="thisauthor">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
-	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/font-awesome/5.9.0/css/all.min.css"
-	th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
-	th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css"
-	th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
+		th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" href="/webjars/font-awesome/5.9.0/css/all.min.css"
+		th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
+	<link rel="stylesheet" type="text/css" href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
+		th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
+	<link rel="stylesheet" type="text/css" href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css"
+		th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
 
 
-<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
-	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
-<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
-	th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
-<script src="/webjars/jquery/3.4.1/jquery.min.js"
-	th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
-<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
-	th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
-<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js"
-	th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
-<script
-	src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
-	th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
+	<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
+		th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+	<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
+		th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
+	<script src="/webjars/jquery/3.4.1/jquery.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+	<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
+		th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+	<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js"
+		th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
+	<script src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
+		th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
 
 
-<link rel="stylesheet" type="text/css"
-	href="webjars/chartjs/2.8.0/Chart.min.css"
-	th:href="@{webjars/chartjs/2.8.0/Chart.min.css}">
-<script src="webjars/chartjs/2.8.0/Chart.min.js"
-	th:src="@{webjars/chartjs/2.8.0/Chart.min.js}"></script>
+	<link rel="stylesheet" type="text/css" href="webjars/chartjs/2.8.0/Chart.min.css"
+		th:href="@{webjars/chartjs/2.8.0/Chart.min.css}">
+	<script src="webjars/chartjs/2.8.0/Chart.min.js" th:src="@{webjars/chartjs/2.8.0/Chart.min.js}"></script>
 
-<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
-<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
-	
-	
-	
-<title>IPSAdmin</title>
+	<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
+	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
 
-<style type="text/css">
-.btn.btn-signin {
-	/*background-color: #4d90fe; */
-	background-color: rgb(0, 59, 101);
-	/* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
-	padding: 0px;
-	font-weight: 700;
-	font-size: 14px;
-	height: 36px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	border: none;
-	-o-transition: all 0.218s;
-	-moz-transition: all 0.218s;
-	-webkit-transition: all 0.218s;
-	transition: all 0.218s;
-}
 
-</style>
-<style>
-/*
- * Specific styles of signin component
- */
-/*
- * General styles
- */
-.card-container.card {
-	max-width: 350px;
-	padding: 40px 40px;
-}
 
-.btn {
-	font-weight: 700;
-	height: 36px;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	user-select: none;
-	cursor: default;
-}
+	<title>IPSAdmin</title>
 
-/*
- * Card component
- */
-.card {
-	background-color: rgba(255, 255, 255, 0.7);
-	/* just in case there no content*/
-	padding: 20px 25px 30px;
-	margin: 0 auto 25px;
-	margin-top: 50px;
-	display: inline-grid;
-	/* shadows and rounded borders */
-	-moz-border-radius: 2px;
-	-webkit-border-radius: 2px;
-	border-radius: 2px;
-	-moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-	-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-}
 
-.profile-img-card {
-	width: 96px;
-	height: 96px;
-	margin: 0 auto 10px;
-	display: block;
-	-moz-border-radius: 50%;
-	-webkit-border-radius: 50%;
-	border-radius: 50%;
-}
+	<style type="text/css">
+		html,
+		body {
+			width: 100%;
+			min-height: 100%;
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+		}
 
-/*
- * Form styles
- */
-.profile-name-card {
-	font-size: 16px;
-	font-weight: bold;
-	text-align: center;
-	margin: 10px 0 0;
-	min-height: 1em;
-}
+		body {
+			min-height: 100vh;
+		}
 
-.reauth-email {
-	display: block;
-	color: #404040;
-	line-height: 2;
-	margin-bottom: 10px;
-	font-size: 14px;
-	text-align: center;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
+		/* Main page: preserve your existing background image */
+		.login-page {
+			min-height: 100vh;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 40px 4%;
+			box-sizing: border-box;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+		}
 
-.form-signin #inputEmail, .form-signin #inputPassword {
-	direction: ltr;
-	height: 44px;
-	font-size: 16px;
-}
+		/* LEFT BRANDING */
+		.branding-section {
+			width: 58%;
+			max-width: 800px;
+			padding-left: 1%;
+			box-sizing: border-box;
+			margin-bottom: 135px;
+			/* Left branding moves up */
+		}
 
-.form-signin input[type=email], .form-signin input[type=password],
-	.form-signin input[type=text], .form-signin button {
-	width: 100%;
-	display: block;
-	margin-bottom: 10px;
-	z-index: 1;
-	position: relative;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
+		.branding-header {
+			display: flex;
+			align-items: center;
+			gap: 24px;
+		}
 
-.form-signin .form-control:focus {
-	border-color: rgb(104, 145, 162);
-	outline: 0;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
-		rgb(104, 145, 162);
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
-		rgb(104, 145, 162);
-}
+		.bornfire-logo {
+			width: 100px;
+			height: 115px;
+			flex-shrink: 0;
+			object-fit: contain;
+		}
 
-.btn.btn-signin {
-	/*background-color: #4d90fe; */
-	background-color: rgb(0, 59, 101);
-	/* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
-	padding: 0px;
-	font-weight: 700;
-	font-size: 14px;
-	height: 36px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	border: none;
-	-o-transition: all 0.218s;
-	-moz-transition: all 0.218s;
-	-webkit-transition: all 0.218s;
-	transition: all 0.218s;
-}
+		.branding-section {
+			width: 65%;
+			max-width: 1000px;
+			padding-left: 1%;
+			box-sizing: border-box;
+			margin-bottom: 135px;
+		}
 
-.btn.btn-signin:hover, .btn.btn-signin:active, .btn.btn-signin:focus {
-	background-color: rgb(80, 95, 105);
-}
+		.branding-title {
+		    display: block;
+		    margin: 0 0 10px;
+		    font-size: clamp(26px, 4vw, 45px);
+		    font-weight: 800;
+		    line-height: 1.12;
+		    white-space: nowrap;
 
-.forgot-password {
-	color: rgb(104, 145, 162);
-}
+		    background: linear-gradient(
+		        to right,
+		        #8bd5ff 0%,
+		        #1688d5 40%,
+		        #123b7b 100%
+		    );
 
-.forgot-password:hover, .forgot-password:active, .forgot-password:focus
-	{
-	color: rgb(12, 97, 33);
-}
-;
-</style>
+		    -webkit-background-clip: text;
+		    background-clip: text;
+		    -webkit-text-fill-color: transparent;
+		    color: transparent;
+		}
+
+		/* Align the title with the bottom of the logo */
+		.branding-header {
+			display: flex;
+			align-items: flex-end;
+			gap: 25px;
+		}
+
+		.branding-title span {
+			display: inline;
+			white-space: nowrap;
+		}
+
+		.branding-divider {
+			width: 96%;
+			height: 3px;
+			margin-top: 2px;
+			background: #e9b52e;
+		}
+
+		.branding-subtitle {
+			margin-top: 16px;
+			margin-bottom: 12px;
+			color: #173d75;
+			font-size: 25px;
+			letter-spacing: 5px;
+			text-align: right;
+			margin-right: 58px;
+		}
+
+		.branding-tagline {
+			width: 100%;
+			text-align: right;
+			color: #173d75;
+			font-size: 18px;
+			font-weight: 700;
+			letter-spacing: 2px;
+			width: calc(100% - 45px);
+			margin-left: 0;
+			margin-right: 45px;
+			text-align: right;
+			box-sizing: border-box;
+		}
+
+		.branding-tagline span {
+			color: #e9b52e;
+			padding: 0 5px;
+		}
+
+		.branding-features {
+			display: flex;
+			align-items: center;
+			margin-top: 100px;
+			max-width: 700px;
+		}
+
+		.feature-item {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 12px;
+			text-align: center;
+			color: #ffffff;
+			font-size: 13px;
+			line-height: 1.4;
+			border-right: 1px solid rgba(255, 255, 255, 0.55);
+		}
+
+		.feature-item:last-child {
+			border-right: none;
+		}
+
+		.feature-item i {
+			font-size: 30px;
+		}
+
+		/* RIGHT LOGIN AREA */
+		.login-section {
+			width: 30%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 250px;
+			/* Right login moves down */
+		}
+
+		.card-container.card {
+			width: 100%;
+			max-width: 510px;
+			padding: 32px 36px;
+			box-sizing: border-box;
+		}
+
+		.card {
+			background: #ffffff !important;
+			border: none !important;
+			border-radius: 24px !important;
+			margin: 0 !important;
+			display: block !important;
+			box-shadow: 0 8px 30px rgba(0, 40, 90, 0.18) !important;
+		}
+
+		/* First Capital Bank logo */
+		.bank-logo {
+			display: block;
+			width: 200px;
+			max-width: 100%;
+			height: 60px;
+			object-fit: contain;
+			margin: 0 auto 16px;
+			border-radius: 0 !important;
+		}
+
+		/* Login heading */
+		.login-title {
+			color: #10245c;
+			font-size: 28px;
+			font-weight: 700;
+			text-align: center;
+			margin: 8px 0;
+		}
+
+		.login-subtitle {
+			color: #596477;
+			text-align: center;
+			font-size: 14px;
+			margin: 8px 0 18px;
+		}
+
+		.login-divider {
+			width: 130px;
+			height: 3px;
+			margin: 0 auto 24px;
+			background: #e9b52e;
+		}
+
+		/* Username and password */
+		.input-wrapper {
+			position: relative;
+			margin-bottom: 14px;
+		}
+
+		.input-wrapper i {
+			position: absolute;
+			left: 18px;
+			top: 50%;
+			transform: translateY(-50%);
+			color: #536078;
+			font-size: 18px;
+			z-index: 2;
+		}
+
+		.form-signin .form-control {
+			width: 100%;
+			height: 60px;
+			padding: 12px 18px 12px 55px;
+			box-sizing: border-box;
+			border: 1px solid #dce2eb;
+			border-radius: 12px;
+			background: #f5f8fc;
+			font-size: 16px;
+		}
+
+		.form-signin .form-control:focus {
+			border-color: #0878df;
+			outline: none;
+			box-shadow: 0 0 0 3px rgba(8, 120, 223, 0.12);
+		}
+
+		/* Login button */
+		.btn.btn-signin {
+			width: 100%;
+			height: 58px;
+			margin-top: 6px;
+			padding: 0 15px;
+			border: none;
+			border-radius: 10px;
+			background: linear-gradient(90deg, #0878df, #0755b8);
+			color: #ffffff;
+			font-size: 18px;
+			font-weight: 700;
+			cursor: pointer;
+			transition: background 0.2s ease;
+		}
+
+		.btn.btn-signin:hover,
+		.btn.btn-signin:focus {
+			background: #064a9f;
+			color: #ffffff;
+		}
+
+		.btn.btn-signin span {
+			margin-left: 6px;
+		}
+
+		.login-message {
+			text-align: center;
+			margin-bottom: 10px;
+			font-size: 13px;
+		}
+
+		.error-message {
+			color: #cd103c;
+		}
+
+		.success-message {
+			color: #279a36;
+		}
+
+		/* Responsive layout */
+		@media (max-width: 900px) {
+			.login-page {
+				flex-direction: column;
+				justify-content: center;
+				gap: 35px;
+				padding: 30px 20px;
+			}
+
+			.branding-section,
+			.login-section {
+				width: 100%;
+				max-width: 600px;
+			}
+
+			.branding-header {
+				gap: 15px;
+			}
+
+			.bornfire-logo {
+				width: 70px;
+				height: 85px;
+			}
+
+			.branding-title {
+				font-size: clamp(26px, 4vw, 45px);
+			}
+
+			.branding-features {
+				margin-top: 35px;
+			}
+
+			.login-section {
+				max-width: 510px;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.card-container.card {
+				padding: 25px 20px;
+			}
+
+			.branding-subtitle {
+				font-size: 18px;
+				letter-spacing: 3px;
+			}
+
+			.branding-tagline {
+				font-size: 10px;
+				letter-spacing: 1px;
+			}
+
+			.branding-features {
+				margin-top: 25px;
+			}
+
+			.feature-item {
+				font-size: 11px;
+			}
+		}
+	</style>
 
 </head>
+
 <body>
 
-<!-- header & menu -->
-		<div th:insert="AStartheader :: header"></div>
+	<!-- header & menu -->
+	<div th:insert="AStartheader :: header"></div>
 
-<!-- Frame -->		
-<div class="container login">
-		<div class="card card-container" style="margin-left: 164px;display: inline-grid;">
-			<img id="profile-img" class="profile-img-card"
-				th:src=@{/images/born_fire_logo.png} />
-			<p id="profile-name" class="profile-name-card">IPS ADMIN</p>
-			<form th:action="@{/login}" method="post" name="Login_Form"
-				class="form-signin">
-				<input type="text" onkeyup="this.value = this.value.toUpperCase();"
-					class="form-control" name="userid" placeholder="User Id"
-					id="userid" required autofocus> <input type="password"
-					class="form-control" name="password" placeholder="Password"
-					id="password" required>
-				<div style="text-align: center; padding-bottom: 10px;">
-					<span style="color: #cd103c;" th:if="${param.error}"
-						th:text="${param.error}">test</span> <span style="color: #34af32;"
-						th:if="${param.logout}">You have been logged out.</span>
-				</div>
-				<button class="btn btn-lg btn-primary btn-block btn-signin"
-					type="submit">Sign in</button>
-			</form>
-			<!-- /form -->
+	<!-- Frame -->
+
+
+
+	<div class="login-page">
+
+		<!-- LEFT SIDE: BORNFire BRANDING -->
+		<div class="branding-section">
+
+			<div class="branding-header">
+
+				<img th:src="@{/images/Bornfire.png}" class="bornfire-logo" alt="Bornfire Logo">
+
+				<h1 class="branding-title">Bornfire Instant Payment System
+				</h1>
+
+			</div>
+
+			<div class="branding-divider"></div>
+
+			<p class="branding-subtitle"></p>
+
+			<p class="branding-tagline">
+				FAST <span>•</span> SECURE <span>•</span>
+				RELIABLE <span>•</span> CONNECTING MAURITIUS
+			</p>
+
+			<div class="branding-features">
+
+			</div>
+
 		</div>
-		<!-- /card-container -->
-	</div> 
+
+		<!-- RIGHT SIDE: LOGIN CARD -->
+		<div class="login-section">
+
+			<div class="card card-container">
+
+				<img th:src="@{/images/First_Capital_Bank.jpeg}" class="bank-logo" alt="First Capital Bank">
+
+				<h2 class="login-title">IPSAdmin Login</h2>
+
+				<p class="login-subtitle">
+					Bornfire Instant Payment System - Admin Portal
+				</p>
+
+				<div class="login-divider"></div>
+
+				<form th:action="@{/login}" method="post" name="Login_Form" class="form-signin">
+
+					<div class="input-wrapper">
+						<i class="fas fa-user"></i>
+						<input type="text" class="form-control" name="userid" id="userid" placeholder="Username"
+							onkeyup="this.value = this.value.toUpperCase();" required autofocus>
+					</div>
+
+					<div class="input-wrapper">
+						<i class="fas fa-lock"></i>
+						<input type="password" class="form-control" name="password" id="password" placeholder="Password"
+							required>
+					</div>
+
+					<div class="login-message">
+						<span th:if="${param.error}" th:text="${param.error}" class="error-message"></span>
+
+						<span th:if="${param.logout}" class="success-message">
+							You have been logged out.
+						</span>
+					</div>
+
+					<button class="btn btn-signin" type="submit">
+						Login <span>&rarr;</span>
+					</button>
+
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
 
 
 
 
 
 
-<!-- </div> -->
-<!--
+
+
+
+	<!-- </div> -->
+	<!--
  <h2><font color="Moccasin" size="3"  face="arial">#LiveitwithBOB</h2> <h1><input type="text" placeholder="Search.." height="500px" width="600px" color="blue"></h5>
 <h4>Personal loan starts with 10.99% p.a.*</h4>
 <h6>*T&C apply</h6>
