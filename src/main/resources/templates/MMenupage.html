@@ -49,7 +49,7 @@
 		left: 0 !important;
 		right: 0 !important;
 		width: 100% !important;
-		height: 56px !important;
+		height: 75px !important;
 		background-color: #112469 !important;
 		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25) !important;
 		z-index: 99999 !important;
@@ -137,8 +137,8 @@
 	}
 
 	.header-nav-btn:hover,
-	.header-nav-item:hover > .header-nav-btn,
-	.header-nav-item.show > .header-nav-btn {
+	.header-nav-item:hover>.header-nav-btn,
+	.header-nav-item.show>.header-nav-btn {
 		background-color: rgba(255, 255, 255, 0.18) !important;
 		color: #ffffff !important;
 	}
@@ -182,8 +182,8 @@
 	}
 
 	/* Support both CSS hover and JS click toggle */
-	.header-nav-item:hover > .nav-dropdown-content,
-	.header-nav-item.show > .nav-dropdown-content {
+	.header-nav-item:hover>.nav-dropdown-content,
+	.header-nav-item.show>.nav-dropdown-content {
 		display: block !important;
 	}
 
@@ -234,7 +234,7 @@
 		position: relative !important;
 	}
 
-	.has-submenu > .nav-dropdown-link::after {
+	.has-submenu>.nav-dropdown-link::after {
 		content: "\f0da" !important;
 		font-family: "Font Awesome 5 Free", "FontAwesome", sans-serif !important;
 		font-weight: 900 !important;
@@ -244,11 +244,11 @@
 		padding-left: 12px !important;
 	}
 
-	.has-submenu:hover > .nav-dropdown-link::after {
+	.has-submenu:hover>.nav-dropdown-link::after {
 		color: #ffffff !important;
 	}
 
-	.has-submenu > .submenu-content {
+	.has-submenu>.submenu-content {
 		position: absolute !important;
 		top: 0 !important;
 		left: 100% !important;
@@ -264,8 +264,8 @@
 		z-index: 100001 !important;
 	}
 
-	.has-submenu:hover > .submenu-content,
-	.has-submenu.show > .submenu-content {
+	.has-submenu:hover>.submenu-content,
+	.has-submenu.show>.submenu-content {
 		display: block !important;
 	}
 
@@ -310,14 +310,14 @@
 	}
 
 	.header-user-btn:hover,
-	.header-user-section:hover > .header-user-btn,
-	.header-user-section.show > .header-user-btn {
+	.header-user-section:hover>.header-user-btn,
+	.header-user-section.show>.header-user-btn {
 		background-color: rgba(255, 255, 255, 0.18) !important;
 		color: #ffffff !important;
 	}
 
-	.header-user-section:hover > .user-dropdown-content,
-	.header-user-section.show > .user-dropdown-content {
+	.header-user-section:hover>.user-dropdown-content,
+	.header-user-section.show>.user-dropdown-content {
 		display: block !important;
 	}
 
@@ -338,12 +338,12 @@
 
 	/* ================= SCREEN BODY CENTER ALIGNMENT ================= */
 	.container-manager {
-		width: 90% !important;
+		width: 88% !important;
 		padding-right: 43px !important;
-		padding-left: 15px !important;
+		padding-left: 43px !important;
 		margin-right: auto !important;
 		margin-left: auto !important;
-		margin-top: 80px !important;
+		margin-top: 87px !important;
 		float: none !important;
 		clear: both !important;
 	}
@@ -376,10 +376,10 @@
 		border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
 	}
 
-	.card-header h6, 
-	.card-header h5, 
-	.card-header h4, 
-	.card-header h3, 
+	.card-header h6,
+	.card-header h5,
+	.card-header h4,
+	.card-header h3,
 	.card-header .card-title,
 	.card-header label {
 		color: #ffffff !important;
@@ -410,7 +410,8 @@
 	}
 
 	/* Tables */
-	.table thead th, table th {
+	.table thead th,
+	table th {
 		background-color: #eaedf0 !important;
 		color: #333333 !important;
 		font-weight: 600 !important;
@@ -420,7 +421,8 @@
 		vertical-align: middle !important;
 	}
 
-	.table td, table td {
+	.table td,
+	table td {
 		background-color: #ffffff !important;
 		color: #333333 !important;
 		font-size: 13px !important;
@@ -449,7 +451,7 @@
 		padding: 10px 16px !important;
 	}
 
-	.card-footer .btn, 
+	.card-footer .btn,
 	.card-footer button {
 		background-color: #ffffff !important;
 		background-image: none !important;
@@ -465,7 +467,7 @@
 		cursor: pointer !important;
 	}
 
-	.card-footer .btn:hover, 
+	.card-footer .btn:hover,
 	.card-footer button:hover {
 		background-color: #f0f4f8 !important;
 		color: #0b1744 !important;
@@ -522,8 +524,98 @@
 			transform: rotate(360deg);
 		}
 	}
+
+	.header-nav-container {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 8px;
+		/* Equal distance between menus */
+		height: 52px;
+		white-space: nowrap;
+	}
+
+	.header-nav-item {
+		position: relative;
+		display: flex;
+		align-items: center;
+		flex: 0 0 auto;
+		height: 52px;
+		margin: 0;
+		padding: 0;
+	}
+
+	.header-nav-btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 5px;
+		/* Distance between icon and text */
+		padding: 0 6px;
+		/* Space inside each menu */
+		height: 100%;
+		margin: 0;
+		line-height: 1;
+		white-space: nowrap;
+		box-sizing: border-box;
+	}
+
+	.nav-head-icon,
+	.caret-icon {
+		flex-shrink: 0;
+		margin: 0;
+		line-height: 1;
+	}
+
+	.card-footer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 12px;
+		width: 100%;
+		text-align: center;
+	}
 </style>
 
+<style>
+	.common-table-scroll {
+		max-height: 350px;
+		overflow-y: auto;
+		overflow-x: hidden;
+		width: 100%;
+	}
+
+	.common-table-scroll table {
+		width: 100% !important;
+		margin-bottom: 0;
+	}
+
+	.common-table-scroll thead th {
+		position: sticky;
+		top: 0;
+		z-index: 2;
+		background-color: #e9ecef;
+	}
+</style>
+
+
+<script>
+	$(document).ready(function () {
+
+		$('table.table').each(function () {
+
+			// Avoid wrapping the same table more than once
+			if (!$(this).parent().hasClass('common-table-scroll')) {
+
+				$(this).wrap(
+					'<div class="common-table-scroll"></div>'
+				);
+			}
+
+		});
+
+	});
+</script>
 <script type="text/javascript" th:inline="javascript">
 	/*<![CDATA[*/
 
@@ -706,7 +798,8 @@
 			<div class="header-nav-item"
 				th:if="${IPSRoleMenu == null or (IPSRoleMenu.menulist != null and IPSRoleMenu.menulist.contains('Admin'))}">
 				<a class="header-nav-btn" href="javascript:void(0);">
-					<i class="fa fa-university nav-head-icon"></i> Admin Operation <i class="fa fa-caret-down caret-icon"></i>
+					<i class="fa fa-university nav-head-icon"></i> Admin Operation <i
+						class="fa fa-caret-down caret-icon"></i>
 				</a>
 				<div class="nav-dropdown-content">
 					<a class="nav-dropdown-link" href="javascript:void(0);" id="UserProfile"
@@ -721,7 +814,8 @@
 							<a class="nav-dropdown-link" href="javascript:void(0);" id="LoginSecurity"
 								onclick="contentLoad(this)"><i class="fa fa-lock"></i> Login Security</a>
 							<a class="nav-dropdown-link" href="javascript:void(0);" id="ServiceChargesAndFees"
-								onclick="contentLoad(this)"><i class="fa fa-money-bill"></i> Service Charges &amp; Fees</a>
+								onclick="contentLoad(this)"><i class="fa fa-money-bill"></i> Service Charges &amp;
+								Fees</a>
 							<a class="nav-dropdown-link" href="javascript:void(0);" id="IpsBankandBranchMaster"
 								onclick="contentLoad(this)"><i class="fa fa-building"></i> Bank &amp; Branch Master</a>
 							<a class="nav-dropdown-link" href="javascript:void(0);" id="SettlementAccount"
@@ -737,7 +831,8 @@
 			<div class="header-nav-item"
 				th:if="${IPSRoleMenu == null or (IPSRoleMenu.menulist != null and IPSRoleMenu.menulist.contains('Audit_operations'))}">
 				<a class="header-nav-btn" href="javascript:void(0);">
-					<i class="fa fa-edit nav-head-icon"></i> Audit Operations <i class="fa fa-caret-down caret-icon"></i>
+					<i class="fa fa-edit nav-head-icon"></i> Audit Operations <i
+						class="fa fa-caret-down caret-icon"></i>
 				</a>
 				<div class="nav-dropdown-content">
 					<a class="nav-dropdown-link" href="javascript:void(0);" id="userActivities"
@@ -760,9 +855,11 @@
 						</a>
 						<div class="submenu-content">
 							<a class="nav-dropdown-link" href="javascript:void(0);" id="BulkCredit"
-								onclick="contentLoad(this)"><i class="fa fa-arrow-circle-right"></i> Bulk Credit Transaction</a>
+								onclick="contentLoad(this)"><i class="fa fa-arrow-circle-right"></i> Bulk Credit
+								Transaction</a>
 							<a class="nav-dropdown-link" href="javascript:void(0);" id="BulkDebit"
-								onclick="contentLoad(this)"><i class="fa fa-arrow-circle-left"></i> Bulk Debit Transaction</a>
+								onclick="contentLoad(this)"><i class="fa fa-arrow-circle-left"></i> Bulk Debit
+								Transaction</a>
 						</div>
 					</div>
 					<a class="nav-dropdown-link" href="javascript:void(0);" id="IPSManualTransaction"
@@ -773,8 +870,8 @@
 						onclick="contentLoad(this)"><i class="fa fa-undo"></i> Reversal Transaction</a>
 					<a class="nav-dropdown-link" href="javascript:void(0);" id="IPSReconciliation"
 						onclick="contentLoad(this)"><i class="fa fa-balance-scale"></i> IPS Reconciliation</a>
-					<a class="nav-dropdown-link" href="javascript:void(0);" id="Mandate"
-						onclick="contentLoad(this)"><i class="fa fa-file-contract"></i> Mandate Management</a>
+					<a class="nav-dropdown-link" href="javascript:void(0);" id="Mandate" onclick="contentLoad(this)"><i
+							class="fa fa-file-contract"></i> Mandate Management</a>
 				</div>
 			</div>
 
@@ -792,7 +889,8 @@
 					<a class="nav-dropdown-link" href="javascript:void(0);" id="TransMonitorINC"
 						onclick="contentLoad(this)"><i class="fa fa-desktop"></i> Inward Transaction Monitor</a>
 					<a class="nav-dropdown-link" href="javascript:void(0);" id="TransMonitorOutwardMC"
-						onclick="contentLoad(this)"><i class="fa fa-desktop"></i> Outgoing Credit Transaction Monitor</a>
+						onclick="contentLoad(this)"><i class="fa fa-desktop"></i> Outgoing Credit Transaction
+						Monitor</a>
 					<a class="nav-dropdown-link" href="javascript:void(0);" id="RTPOUTING"
 						onclick="contentLoad(this)"><i class="fa fa-desktop"></i> RTP-Outgoing Transaction Monitor</a>
 					<a class="nav-dropdown-link" href="javascript:void(0);" id="TransMonitorBulk"
@@ -810,7 +908,8 @@
 			<div class="header-nav-item"
 				th:if="${IPSRoleMenu == null or (IPSRoleMenu.menulist != null and IPSRoleMenu.menulist.contains('MYT_Registration'))}">
 				<a class="header-nav-btn" href="javascript:void(0);">
-					<i class="fa fa-desktop nav-head-icon"></i> MyT Registration <i class="fa fa-caret-down caret-icon"></i>
+					<i class="fa fa-desktop nav-head-icon"></i> MyT Registration <i
+						class="fa fa-caret-down caret-icon"></i>
 				</a>
 				<div class="nav-dropdown-content">
 					<a class="nav-dropdown-link" href="javascript:void(0);" id="MyTUserReg"
@@ -822,13 +921,14 @@
 			<div class="header-nav-item"
 				th:if="${IPSRoleMenu == null or (IPSRoleMenu.menulist != null and IPSRoleMenu.menulist.contains('MYT_Registration'))}">
 				<a class="header-nav-btn" href="javascript:void(0);">
-					<i class="fa fa-desktop nav-head-icon"></i> Inward Consent <i class="fa fa-caret-down caret-icon"></i>
+					<i class="fa fa-desktop nav-head-icon"></i> Inward Consent <i
+						class="fa fa-caret-down caret-icon"></i>
 				</a>
 				<div class="nav-dropdown-content">
 					<a class="nav-dropdown-link" href="javascript:void(0);" id="InwardConReg"
 						onclick="contentLoad(this)"><i class="fa fa-file-import"></i> Inward Consent Registration</a>
-					<a class="nav-dropdown-link" href="javascript:void(0);" id="AISP_REQ"
-						onclick="contentLoad(this)"><i class="fa fa-paper-plane"></i> AISP Request</a>
+					<a class="nav-dropdown-link" href="javascript:void(0);" id="AISP_REQ" onclick="contentLoad(this)"><i
+							class="fa fa-paper-plane"></i> AISP Request</a>
 				</div>
 			</div>
 
@@ -836,7 +936,8 @@
 			<div class="header-nav-item"
 				th:if="${IPSRoleMenu == null or (IPSRoleMenu.menulist != null and IPSRoleMenu.menulist.contains('MYT_Registration'))}">
 				<a class="header-nav-btn" href="javascript:void(0);">
-					<i class="fa fa-desktop nav-head-icon"></i> Outward Consent <i class="fa fa-caret-down caret-icon"></i>
+					<i class="fa fa-desktop nav-head-icon"></i> Outward Consent <i
+						class="fa fa-caret-down caret-icon"></i>
 				</a>
 				<div class="nav-dropdown-content">
 					<a class="nav-dropdown-link" href="javascript:void(0);" id="OutwardConReg"
@@ -850,7 +951,8 @@
 			<div class="header-nav-item dropdown-align-right"
 				th:if="${IPSRoleMenu == null or (IPSRoleMenu.menulist != null and IPSRoleMenu.menulist.contains('MYT_Registration'))}">
 				<a class="header-nav-btn" href="javascript:void(0);">
-					<i class="fa fa-desktop nav-head-icon"></i> Merchant Registration <i class="fa fa-caret-down caret-icon"></i>
+					<i class="fa fa-desktop nav-head-icon"></i> Merchant Registration <i
+						class="fa fa-caret-down caret-icon"></i>
 				</a>
 				<div class="nav-dropdown-content">
 					<a class="nav-dropdown-link" href="javascript:void(0);" id="MerchantQRREG"
@@ -861,11 +963,11 @@
 			</div>
 
 			<!-- 10. Logout Link -->
-			<div class="header-nav-item">
+			<!--<div class="header-nav-item">
 				<a class="header-nav-btn" href="javascript:void(0);" onclick="logout()">
 					<i class="fa fa-sign-out-alt nav-head-icon"></i> Logout
 				</a>
-			</div>
+			</div>-->
 
 		</div>
 
@@ -907,21 +1009,25 @@
 					<form th:object="${singledetail}" id="passform" method="post">
 						<div class="form-group text-left">
 							<div class="form-group row">
-								<label class="col-sm-5 col-form-label font-weight-bold" for="oldpass">Old Password :</label>
+								<label class="col-sm-5 col-form-label font-weight-bold" for="oldpass">Old Password
+									:</label>
 								<div class="col-sm-7">
 									<input class="form-control" type="password" id="oldpass" name="oldpass" required />
 								</div>
 							</div>
 							<div class="form-group row">
-								<label class="col-sm-5 col-form-label font-weight-bold" for="newpass">New Password :</label>
+								<label class="col-sm-5 col-form-label font-weight-bold" for="newpass">New Password
+									:</label>
 								<div class="col-sm-7">
 									<input class="form-control" type="password" id="newpass" name="newpass" required />
 								</div>
 							</div>
 							<div class="form-group row">
-								<label class="col-sm-5 col-form-label font-weight-bold" for="Connewpass">Confirm New Password :</label>
+								<label class="col-sm-5 col-form-label font-weight-bold" for="Connewpass">Confirm New
+									Password :</label>
 								<div class="col-sm-7">
-									<input class="form-control" type="password" id="Connewpass" name="newpass" required />
+									<input class="form-control" type="password" id="Connewpass" name="newpass"
+										required />
 								</div>
 							</div>
 						</div>
@@ -943,7 +1049,8 @@
 					<div class="modal-title text-center">LOGOUT</div>
 				</div>
 				<div class="modal-body text-center" style="background-color: #f8fafc; padding: 25px;">
-					<p class="mb-0 font-weight-bold" style="font-size: 15px; color: #2d3748;">Are You Sure Want to Logout ?</p>
+					<p class="mb-0 font-weight-bold" style="font-size: 15px; color: #2d3748;">Are You Sure Want to
+						Logout ?</p>
 				</div>
 				<div class="modal-footer justify-content-center">
 					<button type="button" class="btn btn-primary px-4" id="logout" onclick="contentLoad(this)"

@@ -77,7 +77,6 @@
 			max-width: 800px;
 			padding-left: 1%;
 			box-sizing: border-box;
-			margin-bottom: 135px;
 			/* Left branding moves up */
 		}
 
@@ -85,13 +84,17 @@
 			display: flex;
 			align-items: center;
 			gap: 24px;
+			margin-bottom: -48px;
 		}
 
 		.bornfire-logo {
-			width: 100px;
-			height: 115px;
+			width: 165px;
+			height: 255px;
 			flex-shrink: 0;
 			object-fit: contain;
+			margin-top: 19px;
+			position: relative;
+			top: 10px;
 		}
 
 		.branding-section {
@@ -99,29 +102,29 @@
 			max-width: 1000px;
 			padding-left: 1%;
 			box-sizing: border-box;
-			margin-bottom: 135px;
+			margin-bottom: 349px;
 		}
 
 		.branding-title {
-		    display: block;
-		    margin: 0 0 10px;
-		    font-size: clamp(26px, 4vw, 45px);
-		    font-weight: 800;
-		    line-height: 1.12;
-		    white-space: nowrap;
+			display: block;
+			margin: 0 0 10px;
+			font-size: clamp(26px, 4vw, 45px);
+			font-weight: 800;
+			line-height: 1.12;
+			white-space: nowrap;
+			margin-bottom: 88px;
 
-		    background: linear-gradient(
-		        to right,
-		        #8bd5ff 0%,
-		        #1688d5 40%,
-		        #123b7b 100%
-		    );
+			background: linear-gradient(to right,
+					#F47772 0%,
+					#EF4039 45%,
+					#A71916 100%);
 
-		    -webkit-background-clip: text;
-		    background-clip: text;
-		    -webkit-text-fill-color: transparent;
-		    color: transparent;
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: transparent;
 		}
+
 
 		/* Align the title with the bottom of the logo */
 		.branding-header {
@@ -136,39 +139,49 @@
 		}
 
 		.branding-divider {
-			width: 96%;
-			height: 3px;
-			margin-top: 2px;
-			background: #e9b52e;
-		}
-
-		.branding-subtitle {
-			margin-top: 16px;
-			margin-bottom: 12px;
-			color: #173d75;
-			font-size: 25px;
-			letter-spacing: 5px;
-			text-align: right;
-			margin-right: 58px;
+		    display: block;
+		    width: 78%;
+		    height: 1.5px;
+		    margin-top: -87px;
+		    margin-left: 190px;
+		    padding: 0;
+		    background-color: goldenrod;
+		    border: none;
+			border-bottom: none;
 		}
 
 		.branding-tagline {
-			width: 100%;
-			text-align: right;
-			color: #173d75;
-			font-size: 18px;
-			font-weight: 700;
-			letter-spacing: 2px;
-			width: calc(100% - 45px);
-			margin-left: 0;
-			margin-right: 45px;
-			text-align: right;
-			box-sizing: border-box;
+		    width: 100%;
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		    color: #173D75;
+		    font-size: 11px;
+		    font-weight: 900;
+		    letter-spacing: 2px;
+		    margin: 0;
+		    padding: 0 10px;
+		    box-sizing: border-box;
+		    white-space: nowrap;
+
+		    /* Bold and shining text */
+		    text-shadow:
+		        0 0 1px rgba(23, 61, 117, 0.8),
+		        0 0 3px rgba(23, 61, 117, 0.25);
+		    -webkit-font-smoothing: antialiased;
 		}
 
 		.branding-tagline span {
-			color: #e9b52e;
-			padding: 0 5px;
+			color: #173d75;
+			padding: 0;
+		}
+
+		.branding-tagline .tagline-highlight {
+			color: #173d75;
+			font-size: 18px;
+			font-weight: 800;
+			letter-spacing: 2px;
+			margin-left: auto;
 		}
 
 		.branding-features {
@@ -205,7 +218,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			margin-top: 250px;
+			margin-top: 95px;
 			/* Right login moves down */
 		}
 
@@ -228,12 +241,14 @@
 		/* First Capital Bank logo */
 		.bank-logo {
 			display: block;
-			width: 200px;
+			width: 320px;
 			max-width: 100%;
-			height: 60px;
+			height: 90px;
 			object-fit: contain;
 			margin: 0 auto 16px;
-			border-radius: 0 !important;
+			border-radius: 15px !important;
+			overflow: hidden;
+			clip-path: inset(0 round 15px);
 		}
 
 		/* Login heading */
@@ -256,7 +271,7 @@
 			width: 130px;
 			height: 3px;
 			margin: 0 auto 24px;
-			background: #e9b52e;
+			background: #94C840;
 		}
 
 		/* Username and password */
@@ -374,11 +389,6 @@
 				padding: 25px 20px;
 			}
 
-			.branding-subtitle {
-				font-size: 18px;
-				letter-spacing: 3px;
-			}
-
 			.branding-tagline {
 				font-size: 10px;
 				letter-spacing: 1px;
@@ -411,12 +421,9 @@
 		<div class="branding-section">
 
 			<div class="branding-header">
-
-				<img th:src="@{/images/Bornfire.png}" class="bornfire-logo" alt="Bornfire Logo">
-
-				<h1 class="branding-title">Bornfire Instant Payment System
+				<img th:src="@{/images/bfilogo.png}" class="bornfire-logo" alt="Bornfire Logo">
+				<h1 class="branding-title">Instant Payment System (BIPS)
 				</h1>
-
 			</div>
 
 			<div class="branding-divider"></div>
@@ -424,8 +431,14 @@
 			<p class="branding-subtitle"></p>
 
 			<p class="branding-tagline">
-				FAST <span>•</span> SECURE <span>•</span>
-				RELIABLE <span>•</span> CONNECTING MAURITIUS
+				<span
+					style="display: inline-block; margin-left: 183px; margin-right: 10px; margin-top: -19px;">FAST</span>
+				<span
+					style="display: inline-block; margin-left: 10px; margin-right: 10px; margin-top: -19px;">SECURE</span>
+				<span
+					style="display: inline-block; margin-left: 10px; margin-right: 10px; margin-top: -19px;">RELIABLE</span>
+				<span class="tagline-highlight"
+					style="display: inline-block; margin-right: 18px; margin-top: -19px;">CONNECTING MAURITIUS</span>
 			</p>
 
 			<div class="branding-features">
@@ -441,7 +454,7 @@
 
 				<img th:src="@{/images/First_Capital_Bank.jpeg}" class="bank-logo" alt="First Capital Bank">
 
-				<h2 class="login-title">IPSAdmin Login</h2>
+				<h2 class="login-title">BIPSAdmin Login</h2>
 
 				<p class="login-subtitle">
 					Bornfire Instant Payment System - Admin Portal
